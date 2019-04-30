@@ -1,15 +1,80 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
 nav img{
     height: 56px !important;
 }
 nav i{
     display: inline-block !important;
 }
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
+main {
+	flex: 1 0 auto;
+}
+.precio-actual{
+	font-size: 1.6em;
+	font-weight: bolder;
+}
+.precio-anterior{
+	font-size: 1.2em;
+	font-weight: 500;
+}
+.descripcion{
+	font-size: 1.1em;
+}
+.add-carrito, .add-deseo, .vista-rapida{
+	position: absolute;	
+	bottom: -20px;
+}
+.add-carrito{
+	right: 5px;
+}
+.add-deseo{
+	right: 50px;
+}
+.vista-rapida{
+	right: 95px;
+}
+.descuento{
+	font-size: .6em;
+	background-color: red;
+    border-radius: 40%;
+    padding: 3px;
+    color: white;
+}
+.btn-floating i {
+	font-size: 1.3em !important;
+}
+.card-title a {
+  text-decoration: none;
+  -webkit-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  -moz-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  -ms-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  -o-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 700;
+  font-family: 'Exo 2';
+  line-height: 0.8;
+  color: #fbd62a;
+  text-shadow: 0 -1px 12px rgba(0, 0, 0, 0.8), 0 1px 0 #7f6303, 0 3px 0 #846703, 0 2px 0 #896b03, 0 4px 0 #8e6f03, 0 6px 0 #937203, 0 3px 50px rgba(252, 223, 92, 0.8);
+}
+.card-title a:hover {
+  -webkit-transform: perspective(8em) rotateX(11deg) scale(1.1);
+  -moz-transform: perspective(8em) rotateX(11deg) scale(1.1);
+  -ms-transform: perspective(8em) rotateX(11deg) scale(1.1);
+  -o-transform: perspective(8em) rotateX(11deg) scale(1.1);
+  transform: perspective(8em) rotateX(11deg) scale(1.1);
+  text-shadow: 0 -1px 15px black, 0 1px 0 #7f6303, 0 2px 0 #846703, 0 0px 0 #896b03, 0 1px 0 #8e6f03, 0 2px 0 #937203, 0 2px 30px rgba(252, 223, 92, 0.6);
+}
+.card .card-image .card-title{
+	padding: 17px !important;
+}
