@@ -1,5 +1,5 @@
 //Variables
-
+let elem;
 
 //Event Listener
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,17 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
 
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, { numVisible:1, dist:0, fullWidth:true});
-
-    var instance = M.Carousel.init({
-    fullWidth: true,
-    indicators: true,
-    autoplay: true
-  });
-
-
+    elem = document.querySelector('.carousel');
+    var instances = M.Carousel.init(elem, {
+                                        fullWidth:true,
+                                        indicators:false,
+                                        autoplay: true,
+                                        onCycleTo: function(data){
+                                                let elemento = data.childNodes[3].childNodes[1];
+                                                if (!elemento.classList.contains('fadeInLeft')){
+                                                    elemento.classList.remove('hide');
+                                                    elemento.classList.add('fadeInLeft');
+                                                }
+                                        }
+                                    });
+    //autoplay(); //Inicia carousel
 });
 
 
 //Funciones
+function autoplay() {
+    carousel = M.Carousel.getInstance(elem);
+    carousel.next();
+    setTimeout(autoplay, 5500);
+}

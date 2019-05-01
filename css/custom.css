@@ -17,6 +17,16 @@ nav i{
 main {
 	flex: 1 0 auto;
 }
+.carousel-item{
+    position: relative;
+}
+.carousel-item-content{
+    position: relative;
+    bottom: 50px;
+}
+.menu-principal{
+    margin-bottom: 1.5em;
+}
 .precio-actual{
 	font-size: 1.6em;
 	font-weight: bolder;
@@ -65,6 +75,10 @@ main {
 .letras-logo{
     font-size: 1.6em;
     font-weight: bolder;
+}
+.informacion{
+    background-color: #FFEA00;
+    color: black;
 }
 .card-title a {
   text-decoration: none;
