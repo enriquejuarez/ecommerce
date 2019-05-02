@@ -110,6 +110,17 @@ main {
 .page-footer{
     background-color: #404040;
 }
+.contenedor-carrito{
+    position: relative;
+}
+#vista-carrito{
+    position: absolute;
+    background-color: white;
+    width: 80vw;
+    right: 0;
+    top: 45px;
+
+}
 
 .card-title a {
   text-decoration: none;

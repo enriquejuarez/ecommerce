@@ -1,5 +1,8 @@
 //Variables
 let elem;
+let productos;
+let carrito =  document.querySelector('#carrito');
+let vista_carrito =  document.querySelector('#vista-carrito');
 
 //Event Listener
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,6 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                         }
                                     });
     autoplay(); //Inicia carousel
+
+    productos = document.querySelectorAll('.add-carrito'); //Agregar al carrito de compra
+    productos.forEach(function(producto) {
+        producto.addEventListener('click', agregarCarrito);
+    });
+
+    carrito.addEventListener('click', mostrarCarrito);
 });
 
 
@@ -29,4 +39,16 @@ function autoplay() {
     carousel = M.Carousel.getInstance(elem);
     carousel.next();
     setTimeout(autoplay, 5500);
+}
+
+function agregarCarrito(){
+    M.toast({
+        html: 'Agregado al carrito!',
+        inDuration: 400
+    });
+}
+
+function mostrarCarrito(e){
+    console.log(vista_carrito);
+    vista_carrito.classList.toggle('hide');
 }
