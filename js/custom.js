@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                                 let elemento = data.childNodes[3].childNodes[1];
                                                 if (!elemento.classList.contains('fadeInLeft')){
                                                     elemento.classList.remove('hide');
-                                                    elemento.classList.add('fadeInLeft');
+                                                    elemento.classList.add('fadeInLeft', 'add');
                                                 }
                                         }
                                     });
-    //autoplay(); //Inicia carousel
+    autoplay(); //Inicia carousel
 });
 
 

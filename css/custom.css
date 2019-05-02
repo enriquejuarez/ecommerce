@@ -51,6 +51,16 @@ main {
 .vista-rapida{
 	right: 95px;
 }
+.nuevo{
+    position: absolute;
+    top: 10px;
+    bottom: 180px;
+    font-size: 1em;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    padding: 12px 5px 12px 5px;
+}
 .descuento{
 	font-size: .6em;
 	background-color: red;
@@ -80,6 +90,27 @@ main {
     background-color: #FFEA00;
     color: black;
 }
+.politica{
+    padding: 15px 0px 15px 40px !important;
+    font-size: 1.3em;
+    border: 1px solid rgba(0,0,0, .2);
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.calificacion{
+    text-align: right;
+    margin: 10px 0;
+}
+.calificacion .completa{
+    color: #F07120;
+}
+.boletin{
+    display: flex;
+}
+.page-footer{
+    background-color: #404040;
+}
+
 .card-title a {
   text-decoration: none;
   -webkit-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
