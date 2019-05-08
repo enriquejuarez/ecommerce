@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                         indicators:false,
                                         autoplay: true,
                                         onCycleTo: function(data){
+
                                                 let elemento = data.childNodes[3].childNodes[1];
                                                 if (!elemento.classList.contains('fadeInLeft')){
+                                                    console.log("Entrad")
                                                     elemento.classList.remove('hide');
-                                                    elemento.classList.add('fadeInLeft', 'add');
+                                                    elemento.classList.add('fadeInLeft');
                                                 }
                                         }
                                     });
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function autoplay() {
     carousel = M.Carousel.getInstance(elem);
     carousel.next();
-    setTimeout(autoplay, 5500);
+    setTimeout(autoplay, 6500);
 }
 
 function agregarCarrito(){
