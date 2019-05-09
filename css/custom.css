@@ -133,8 +133,11 @@ table{
 #vista-carrito table td{
     line-height: 1.1;
 }
-.borrar-curso{
+.borrar-producto{
     color: black;
+}
+#montos{
+    width: 50%;
 }
 
 .card-title a {
