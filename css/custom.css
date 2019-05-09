@@ -9,7 +9,7 @@ nav{
     background-color: #B3CC57;
 }
 nav img{
-    height: 56px !important;
+    /*height: 56px !important;*/
 }
 nav i{
     display: inline-block !important;
@@ -116,10 +116,19 @@ main {
 #vista-carrito{
     position: absolute;
     background-color: white;
-    width: 80vw;
-    right: 0;
+    width: 92vw;
+    right: -15px;
     top: 45px;
-
+    z-index: 5;
+    color: black;
+    padding: 5px;
+}
+table{
+    width: 95%;
+    margin: 0 auto;
+}
+#vista-carrito table td{
+    line-height: 1.1;
 }
 
 .card-title a {

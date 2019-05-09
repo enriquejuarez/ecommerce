@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
 
@@ -49,7 +49,45 @@
                                 <div class="col s1 contenedor-carrito">
                                     <i class="material-icons" id="carrito">shopping_cart</i>
                                     <div id="vista-carrito" class="hide">
-                                        <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                        <div class="row">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="cart.png" class=""><img src="img/control.jpg" alt="" class="responsive-img"></a>
+                                                        </td>
+                                                        <td>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </td>
+                                                        <td>
+                                                            <em>$150.00</em>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" style="color: black;">x</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="col s8">
+                                                Articulo
+                                            </div>
+                                            <div class="col s4">
+                                                150.00
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                                subtotal
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <a class="waves-effect waves-light btn">Ver carrito</a>
+                                            </div>
+                                            <div class="col s6">
+                                                <a class="waves-effect waves-light btn">Pagar</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +154,7 @@
                 </div>
             </div>
             <div class="row"><!-- políticas -->
-                <div class="col s12 m4 politica animated infinite bounce">
+                <div class="col s12 m4 politica animated bounceInLeft delay-1s">
                     <i class="fas fa-truck" style="color: #FF5500"></i>
                     <em>Envío gratis</em>
                 </div>
@@ -124,7 +162,7 @@
                     <i class="fas fa-money-check-alt" style="color: #FF5500"></i>
                     <em>Pago cómodo y seguro</em>
                 </div>
-                <div class="col s12 m4 politica">
+                <div class="col s12 m4 politica animated bounceInRight delay-2s">
                     <i class="fas fa-shield-alt" style="color: #FF5500"></i>
                     <em>Transacciones seguras</em>
                 </div>
@@ -403,7 +441,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="js/wow.js"></script>
 <script>
-    new WOW().init();
+    // new WOW().init();
 </script>
 <script src="js/custom.js"></script>
 </body>
