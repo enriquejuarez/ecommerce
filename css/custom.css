@@ -123,12 +123,18 @@ main {
     color: black;
     padding: 5px;
 }
+#vista-carrito img{
+    width: 100px;
+}
 table{
     width: 95%;
     margin: 0 auto;
 }
 #vista-carrito table td{
     line-height: 1.1;
+}
+.borrar-curso{
+    color: black;
 }
 
 .card-title a {
