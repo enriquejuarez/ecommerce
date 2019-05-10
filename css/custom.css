@@ -138,6 +138,13 @@ table{
 }
 #montos{
     width: 50%;
+    margin: 0;
+}
+.vacio{
+    font-size: 1.1em;
+    color: #A8A8A8;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .card-title a {
