@@ -7,6 +7,8 @@ let lista_carrito =  document.querySelector('#vista-carrito table tbody');
 let montos =  document.querySelector('#montos');
 let vacio =  document.querySelector('.vacio');
 let total =  document.querySelector('#total');
+let sumaSubtotal = 0;
+let subtotal =  document.querySelector('#subtotal');
 
 
 
@@ -84,7 +86,7 @@ function leerDatosProducto(producto){
     const infoProducto = {
         imagen: producto.querySelector('.card-image img').src,
         titulo: producto.querySelector('.card-content .card-title a').textContent,
-        precio: producto.querySelector('.card-content .precios .precio-actual').textContent,
+        precio: producto.querySelector('.card-content .precios .precio-actual span').textContent,
         id: producto.getAttribute('data-id')
     }
     insertarcarrito(infoProducto);
@@ -109,7 +111,8 @@ function insertarcarrito(producto){
         </td>
     `;
     lista_carrito.appendChild(row);
-    console.log(total.querySelector('span').textContent);
+    sumaSubtotal += parseFloat(producto.precio);
+    subtotal.querySelector('span').innerHTML = sumaSubtotal;
     guardarProductoLocalStorage(producto);
 }
 
@@ -173,6 +176,7 @@ function leerLocalStorage(){
     }
     productosLS.forEach(function(e, index){
         const row = document.createElement('tr');
+        sumaSubtotal += parseFloat(productosLS[index].precio);
         row.innerHTML = `
             <td>
                 <img src="${productosLS[index].imagen}" width="100">
@@ -185,7 +189,7 @@ function leerLocalStorage(){
         `;
         lista_carrito.appendChild(row);
     });
-
+    subtotal.querySelector('span').innerHTML = sumaSubtotal;
 }
 
 function eliminarProductoLocalStorage(productoId){
