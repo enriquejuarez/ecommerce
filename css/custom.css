@@ -6,7 +6,7 @@ body {
 }
 nav{
     height: 130px;
-    background-color: #B3CC57;
+    background-color: #4DBEEE;
 }
 nav img{
     /*height: 56px !important;*/
@@ -41,6 +41,7 @@ main {
 .add-carrito, .add-deseo, .vista-rapida{
 	position: absolute;
 	bottom: -20px;
+    background-color: #78CEED !important;
 }
 .add-carrito{
 	right: 5px;
@@ -62,7 +63,7 @@ main {
     padding: 12px 5px 12px 5px;
 }
 .descuento{
-	font-size: .6em;
+	font-size: .9em;
 	background-color: red;
     border-radius: 40%;
     padding: 3px;
@@ -87,15 +88,29 @@ main {
     font-weight: bolder;
 }
 .informacion{
-    background-color: #FFEA00;
-    color: black;
+    background-color: #5F4083;
+    color: white;
 }
 .politica{
-    padding: 15px 0px 15px 40px !important;
+    padding: 15px 0px 15px 25px !important;
     font-size: 1.3em;
     border: 1px solid rgba(0,0,0, .2);
     border-radius: 5px;
     margin-bottom: 5px;
+}
+.politica i{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background:#118ACB;
+    line-height: 43px;
+    text-align: center;
+    border:5px solid #4DBEEE;
+    color: white;
+}
+#iva, #total, #subtotal{
+    color: #118ACB;
+    font-weight: bolder;
 }
 .calificacion{
     text-align: right;
@@ -117,11 +132,13 @@ main {
     position: absolute;
     background-color: white;
     width: 92vw;
-    right: -15px;
+    right: -20px;
     top: 45px;
     z-index: 5;
     color: black;
     padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #4DBEEE;
 }
 #vista-carrito img{
     width: 100px;
@@ -140,14 +157,23 @@ table{
     width: 50%;
     margin: 0;
 }
+#montos tr{
+    border: none;
+}
+#montos tr td{
+    padding: 5px 5px;
+}
 .vacio{
     font-size: 1.1em;
     color: #A8A8A8;
     font-weight: 600;
     letter-spacing: 2px;
 }
+.btn{
+    background-color: #118ACB;
+}
 
-.card-title a {
+/*.card-title a {
   text-decoration: none;
   -webkit-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
   -moz-transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
@@ -174,7 +200,7 @@ table{
   -o-transform: perspective(8em) rotateX(11deg) scale(1.1);
   transform: perspective(8em) rotateX(11deg) scale(1.1);
   text-shadow: 0 -1px 15px black, 0 1px 0 #7f6303, 0 2px 0 #846703, 0 0px 0 #896b03, 0 1px 0 #8e6f03, 0 2px 0 #937203, 0 2px 30px rgba(252, 223, 92, 0.6);
-}
+}*/
 .card .card-image .card-title{
 	padding: 17px !important;
 }

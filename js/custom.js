@@ -7,7 +7,7 @@ let lista_carrito =  document.querySelector('#vista-carrito table tbody');
 let montos =  document.querySelector('#montos');
 let vacio =  document.querySelector('.vacio');
 let total =  document.querySelector('#total');
-let sumaSubtotal = 0;
+let sumaSubtotal = 0.00;
 let subtotal =  document.querySelector('#subtotal');
 
 
