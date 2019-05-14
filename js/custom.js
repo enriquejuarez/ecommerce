@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, {});
 
-    var elem2 = document.querySelector('.carousel-slide2');
-    var elem2 = M.Carousel.init(elem, {});
+    // var elem2 = document.querySelector('.carousel-slide2');
+    // var elem2 = M.Carousel.init(elem, {});
 
 
     autoplay(); //Inicia carousel
