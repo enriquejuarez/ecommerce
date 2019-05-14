@@ -8,8 +8,12 @@ let montos =  document.querySelector('#montos');
 let vacio =  document.querySelector('.vacio');
 let total =  document.querySelector('#total');
 let sumaSubtotal = 0.00;
-let subtotal =  document.querySelector('#subtotal');
-
+let sumaIVA = 0.00;
+let sumaTotal = 0.00;
+let subtotalElem =  document.querySelector('#subtotal');
+let ivalElem =  document.querySelector('#iva');
+let totalElem =  document.querySelector('#total');
+let control_pago =  document.querySelector('.control-pago');
 
 
 /**********************Event Listener********************/
@@ -18,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
 
-    elem = document.querySelector('.carousel');
+    elem = document.querySelector('.carousel-slide');
     var instances = M.Carousel.init(elem, {
                                         fullWidth:true,
                                         indicators:false,
@@ -32,6 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                                 }
                                         }
                                     });
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+
+    var elem2 = document.querySelector('.carousel-slide2');
+    var elem2 = M.Carousel.init(elem, {});
+
+
     autoplay(); //Inicia carousel
 
     carrito.addEventListener('click', mostrarOcultarCarrito);
@@ -107,13 +118,17 @@ function insertarcarrito(producto){
         <td>${producto.titulo}</td>
         <td><em>${producto.precio}</em></td>
         <td>
-            <a href="#" class="borrar-producto" data-id="${producto.id}"><strong>X</strong></a>
+            <a href="#" class="borrar-producto" data-id="${producto.id}">X</a>
         </td>
     `;
     lista_carrito.appendChild(row);
-    sumaSubtotal += parseFloat(producto.precio);
-    subtotal.querySelector('span').innerHTML = sumaSubtotal;
+    ajustarTotales('suma', parseFloat(producto.precio));
     guardarProductoLocalStorage(producto);
+    if (!vacio.classList.contains('hide')){
+        vacio.classList.add('hide');
+        montos.classList.remove('hide');
+        control_pago.classList.remove('hide');
+    }
 }
 
 function eliminarProductoCarrito(e){
@@ -127,6 +142,11 @@ function eliminarProductoCarrito(e){
         producto = e.target;
         productoId = producto.getAttribute('data-id');
         e.target.parentElement.parentElement.remove();
+        if (vista_carrito.childNodes[1].childNodes[1].childNodes[1].childElementCount == 0){
+            montos.classList.add('hide');
+            vacio.classList.remove('hide');
+            control_pago.classList.add('hide');
+        }
         eliminarProductoLocalStorage(productoId);
     }
 
@@ -173,10 +193,10 @@ function leerLocalStorage(){
     if (productosLS.length > 0){
         montos.classList.remove('hide');
         vacio.classList.add('hide');
+        control_pago.classList.remove('hide');
     }
     productosLS.forEach(function(e, index){
         const row = document.createElement('tr');
-        sumaSubtotal += parseFloat(productosLS[index].precio);
         row.innerHTML = `
             <td>
                 <img src="${productosLS[index].imagen}" width="100">
@@ -188,8 +208,8 @@ function leerLocalStorage(){
             </td>
         `;
         lista_carrito.appendChild(row);
+        ajustarTotales('suma', parseFloat(productosLS[index].precio));
     });
-    subtotal.querySelector('span').innerHTML = sumaSubtotal;
 }
 
 function eliminarProductoLocalStorage(productoId){
@@ -204,7 +224,28 @@ function eliminarProductoLocalStorage(productoId){
     productosLS.forEach(function(productoLS, index){
         if (productoLS.id === productoId) {
             productosLS.splice(index, 1);
+            ajustarTotales('resta', parseFloat(productoLS.precio));
         }
     });
     localStorage.setItem('ecommFirst', JSON.stringify(productosLS));
+}
+
+
+function ajustarTotales(tipo, subtotal=0.0, iva=0.0, total=0.0){
+/**
+**Ajusta los precios totales para subtotal, iva y total
+* @param  {tipo= suma, resta subtotal, iva, total}
+* @return  {}
+**/
+    if (tipo == 'suma'){
+        sumaSubtotal += subtotal;
+    }else{
+        sumaSubtotal -= subtotal;
+    }
+    sumaIVA = sumaSubtotal * .16;
+    sumaTotal = sumaSubtotal + sumaIVA;
+
+    subtotalElem.querySelector('span').innerHTML = sumaSubtotal.toFixed(2);
+    ivalElem.querySelector('span').innerHTML = sumaIVA.toFixed(2);
+    totalElem.querySelector('span').innerHTML = sumaTotal.toFixed(2);
 }
