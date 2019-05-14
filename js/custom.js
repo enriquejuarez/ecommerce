@@ -19,8 +19,8 @@ let control_pago =  document.querySelector('.control-pago');
 /**********************Event Listener********************/
 document.addEventListener('DOMContentLoaded', function() {
 
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {});
+    var sidenav = document.querySelector('.sidenav');
+    M.Sidenav.init(sidenav, {});
 
     elem = document.querySelector('.carousel-slide');
     var instances = M.Carousel.init(elem, {
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                         indicators:false,
                                         autoplay: true,
                                         onCycleTo: function(data){
-
                                                 let elemento = data.childNodes[3].childNodes[1];
                                                 if (!elemento.classList.contains('fadeInLeft')){
                                                     elemento.classList.remove('hide');
@@ -36,12 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                                 }
                                         }
                                     });
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {});
+    var modal = document.querySelectorAll('.modal');
+    M.Modal.init(modal, {});
 
-    // var elem2 = document.querySelector('.carousel-slide2');
-    // var elem2 = M.Carousel.init(elem, {});
-
+    var carousel = document.querySelector('.carousel2');
+    M.Carousel.init(carousel, {});
 
     autoplay(); //Inicia carousel
 
